@@ -1,0 +1,18 @@
+.head a{
+    text-decoration: none;
+    color:lightgray;
+    transition:all 0.5s;
+}
+.head a:hover{
+    color:white;
+}
+.head{
+    font-size: 35px;
+    display: flex;
+    justify-content: space-around;
+    background: #131313;
+    color:lightgray;
+}
+body{
+    user-select: none;
+}

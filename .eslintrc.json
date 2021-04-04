@@ -8,6 +8,12 @@
   "rules": {
     "no-console": "off",
     "comma-dangle": "off",
-    "react/jsx-filename-extension": "off"
-  }
+    "react/jsx-filename-extension": "off",
+    "linebreak-style": 0,
+    "components": [ "Label" ],
+            "required": {
+                "every": [ "nesting", "id" ]
+  },
+  "allowChildren": false
+}
 }

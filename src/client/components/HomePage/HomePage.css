@@ -1,0 +1,9 @@
+.pic_container{
+    display: flex;
+    justify-content: space-around;
+}
+.applepic{
+    margin:25px;
+    width:450px;
+    height: 500px;
+}

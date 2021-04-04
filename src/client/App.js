@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
-import './app.css';
-import ReactImage from './react.png';
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import HomePage from './components/HomePage/HomePage.component';
+import SearchPage from './components/SearchPage/SearchPage.component';
+import History from './components/History/History.component';
 
-export default class App extends Component {
-  state = { username: null };
-
-  componentDidMount() {
-    fetch('/api/getUsername')
-      .then(res => res.json())
-      .then(user => this.setState({ username: user.username }));
-  }
-
-  render() {
-    const { username } = this.state;
-    return (
+const App = () => (
+  <div>
+    <BrowserRouter>
       <div>
-        {username ? <h1>{`Hello ${username}`}</h1> : <h1>Loading.. please wait!</h1>}
-        <img src={ReactImage} alt="react" />
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/search" component={SearchPage} />
+        <Route exact path="/history" component={History} />
       </div>
-    );
-  }
-}
+    </BrowserRouter>
+  </div>
+);
+
+export default App;
