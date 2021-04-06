@@ -90,7 +90,7 @@ const SearchPage = () => {
         progress: undefined,
       });
     } else {
-      toast.success('🦄 New Item!!', {
+      toast.success('🦄 New Item!!!', {
         position: 'top-center',
         autoClose: 2500,
         hideProgressBar: false,
