@@ -6,7 +6,6 @@ const path = require('path');
 
 
 const app = express();
-app.set('port', (process.env.PORT || 8080));
 
 app.use(cors());
 app.use(express.json());
@@ -52,4 +51,4 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 console.log(path.resolve(__dirname, '../../build', 'index.html'));
-app.listen(app.get('port'), () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
+app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
