@@ -2,7 +2,7 @@ const express = require('express');
 const puppeteer = require('puppeteer');
 const cors = require('cors');
 const os = require('os');
-// const path = require('path');
+const path = require('path');
 
 const app = express();
 app.set('port', (process.env.PORT || 8080));
@@ -42,13 +42,13 @@ app.post('/api/puppeteer', async (req, res) => {
   }
 });
 
-// if (process.env.NODE_ENV === 'production') {
-//   // Exprees will serve up production assets
-//   app.use(express.static('client/build'));
-//   // Express serve up index.html file if it doesn't recognize route
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-//   });
-// }
-
+if (process.env.NODE_ENV === 'production') {
+  // Exprees will serve up production assets
+  app.use(express.static('client/build'));
+  // Express serve up index.html file if it doesn't recognize route
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../../build', 'index.html'));
+  });
+}
+console.log(path.resolve(__dirname, '../../build', 'index.html'));
 app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
