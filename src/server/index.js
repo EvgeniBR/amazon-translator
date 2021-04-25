@@ -4,6 +4,8 @@ const cors = require('cors');
 const os = require('os');
 
 const app = express();
+app.set('port', (process.env.PORT || 8080));
+
 app.use(cors());
 app.use(express.json());
 // app.use(express.urlencoded());
@@ -40,4 +42,13 @@ app.post('/api/puppeteer', async (req, res) => {
 });
 
 
-app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
+/* app.listen(process.env.PORT || 8080, () => console.log
+(`Listening on port ${process.env.PORT || 8080}!`)); */
+
+
+app.get('/', (request, response) => {
+  const result = 'App is running';
+  response.send(result);
+}).listen(app.get('port'), () => {
+  console.log('App is running, server is listening on port ', app.get('port'));
+});
