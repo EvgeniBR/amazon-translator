@@ -52,6 +52,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 console.log(path.resolve(__dirname, '../../build', 'index.html'));
 app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
+// eslint-disable-next-line no-unused-vars
 const server = app.listen(port, () => {
   console.log('app running on port 8080');
 });
