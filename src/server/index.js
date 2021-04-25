@@ -35,11 +35,9 @@ app.post('/api/puppeteer', async (req, res) => {
     console.log(data);
     res.send(data);
   } catch (error) {
-    console.log('That did not go well.');
+    console.log('That did not go well.', error);
   }
 });
 
 
 app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
-
-console.log('helloaa');
