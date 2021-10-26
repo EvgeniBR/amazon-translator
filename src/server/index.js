@@ -38,7 +38,7 @@ app.post('/api/puppeteer', async (req, res) => {
     console.log(data);
     res.send(data);
   } catch (error) {
-    console.log('That did not go well.', error);
+    console.log('That did not go well .', error);
   }
 });
 
